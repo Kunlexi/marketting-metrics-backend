@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://652862a05efdfc148bc8020f--dapper-kringle-31f866.netlify.app/",
+      "https://652862a05efdfc148bc8020f--dapper-kringle-31f866.netlify.app",
     ],
 
     methods: ["GET", "POST"],
