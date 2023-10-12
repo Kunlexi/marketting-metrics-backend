@@ -8,16 +8,12 @@ const app = express();
 app.use(express.json());
 // app.use(cors());
 
-app.use(
-  cors({
-    origin: [
-      "https://652862a05efdfc148bc8020f--dapper-kringle-31f866.netlify.app",
-    ],
-
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
+const corsOrigin = {
+  origin: "https://652862a05efdfc148bc8020f--dapper-kringle-31f866.netlify.app",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOrigin));
 
 app.use(express.urlencoded({ extended: true }));
 
