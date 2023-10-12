@@ -9,7 +9,7 @@ app.use(express.json());
 // app.use(cors());
 
 const corsOrigin = {
-  origin: "https://652862a05efdfc148bc8020f--dapper-kringle-31f866.netlify.app",
+  origin: "https://6528755abf49562744e6d518--gilded-cajeta-482d2b.netlify.app",
   credentials: true,
   optionSuccessStatus: 200,
 };
