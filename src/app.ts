@@ -6,14 +6,19 @@ import cors from "cors";
 import { PostMetricsInput } from "./types";
 const app = express();
 app.use(express.json());
-
-const corsOptions = {
-  origin:
-    "https://652862a05efdfc148bc8020f--dapper-kringle-31f866.netlify.app/",
-};
-
-app.use(cors(corsOptions));
 // app.use(cors());
+
+app.use(
+  cors({
+    origin: [
+      "https://652862a05efdfc148bc8020f--dapper-kringle-31f866.netlify.app/",
+    ],
+
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+
 app.use(express.urlencoded({ extended: true }));
 
 app.post(paths.metrics.postMetrics, Metrics.addMetrics);
