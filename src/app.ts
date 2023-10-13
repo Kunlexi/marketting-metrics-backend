@@ -5,7 +5,7 @@ import cors from "cors";
 
 import { PostMetricsInput } from "./types";
 const app = express();
-app.use(express.json());
+
 // app.use(cors());
 
 const corsOrigin = {
@@ -15,9 +15,19 @@ const corsOrigin = {
   headers: "*",
 };
 
+app.use(
+  cors({
+    origin: "*",
+    allowedHeaders: "Content-Type",
+    methods: "*",
+  })
+);
+
+app.use(express.json());
+
 // app.use(cors());
 // app.use(cors({ origin: "*" }));
-app.use(cors(corsOrigin));
+// app.use(cors(corsOrigin));
 
 app.use(express.urlencoded({ extended: true }));
 
