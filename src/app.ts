@@ -18,7 +18,7 @@ const corsOrigin = {
 app.use(
   cors({
     origin: "*",
-    allowedHeaders: "Content-Type",
+    allowedHeaders: "*",
     methods: "*",
   })
 );
