@@ -16,9 +16,9 @@ const corsOrigin = {
   optionSuccessStatus: 200,
 };
 
-app.use(cors());
+// app.use(cors());
 // app.use(cors({ origin: "*" }));
-// app.use(cors(corsOrigin));
+app.use(cors(corsOrigin));
 
 app.use(express.urlencoded({ extended: true }));
 
