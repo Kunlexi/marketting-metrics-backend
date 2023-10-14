@@ -18,7 +18,7 @@ class MetricsRepository {
     const metrics = await this.getMetrics();
     //new code
     if (metrics[metric.campaignName]) {
-      throw new Error(`campaignName '${metric.campaignName}' already added`);
+      throw new Error(`Campaign Name '${metric.campaignName}' already exist`);
     }
     metrics[metric.campaignName] = metric;
     await fs.writeFile("database.json", JSON.stringify(metrics));

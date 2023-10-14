@@ -2,8 +2,8 @@ import express, { Express, NextFunction, Request, Response } from "express";
 import { PORT, SERVER_RUNNING_MESSAGE, errors, paths } from "./constants";
 import Metrics from "./controller";
 import cors from "cors";
-
 import { PostMetricsInput } from "./types";
+
 const app = express();
 
 const corsOrigin = {
