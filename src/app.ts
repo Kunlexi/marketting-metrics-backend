@@ -36,7 +36,13 @@ app.get(paths.home, (req: Request, res: Response) => {
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err);
-  res.status(500).json({ message: errors.internalServerError, url: req.url });
+  //new code
+  if (err instanceof Error) {
+    res.status(400).json({ error: err.message });
+  } else {
+    //end
+    res.status(500).json({ message: errors.internalServerError, url: req.url });
+  }
 });
 
 app.use((req: Request, res: Response) => {
